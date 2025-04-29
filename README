@@ -34,7 +34,3 @@ Follow these steps to set up and start using the Splunk Lab:
 4. Access the Splunk web interface at [http://localhost:8000](http://localhost:8000). The default credentials are:
     - Username: `admin`
     - Password: `changeme`
-
-5. Upload and analyze your logs in Splunk.
-
-## Directory Structure
