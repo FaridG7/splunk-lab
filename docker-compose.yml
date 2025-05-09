@@ -3,12 +3,13 @@ services:
     image: splunk/splunk:latest
     container_name: splunk
     ports:
-      - "8000:8000"      # Web UI
-      #- "8088:8088"      # HTTP Event Collector (optional)
+      - "8000:8000" # Web UI
+      # - "8088:8088"  # HTTP Event Collector (optional)
     environment:
       SPLUNK_START_ARGS: "--accept-license"
       SPLUNK_PASSWORD: "changeme"
-      SPLUNK_HEC_TOKEN: "my-token"  # Optional
     volumes:
-      - ./logs:/mnt/logs
+      - ./logs:/mnt/logs # Your logs to ingest
+      - ./splunk_data/etc:/opt/splunk/etc # Configuration files
+      - ./splunk_data/var:/opt/splunk/var # Indexed data and runtime state
     restart: unless-stopped
